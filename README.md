@@ -10,6 +10,23 @@ This repository hosts materials and resources for the PayNet AI Working Group (A
    ```
 2. Explore the Jupyter notebooks for each session to follow along with demonstrations and examples.
 
+## Session 1: Building a Security Deep Research Agent
+
+The notebook [`AIWorkingGroup_01_AIAgents.ipynb`](AIWorkingGroup_01_AIAgents.ipynb) demonstrates how to assemble a simple research agent using tools from the [LangGraph](https://langchain-ai.github.io/langgraph/) ecosystem and the [LiteLLM](https://docs.litellm.ai/) proxy. It walks through:
+
+* Initialising an OpenAI-compatible client pointing at a LiteLLM proxy.
+* Generating both streaming and non-streaming responses from a selected model.
+* Creating a reactive agent via `create_react_agent`, wiring in custom tools (`get_weather`, `scan_port`, and `lookup_cve`), and storing conversation history with an `InMemorySaver` checkpointer.
+* Maintaining context across turns by supplying a thread ID and invoking the agent to recall earlier details (e.g. a user's city) when answering follow-up questions.
+
+To run the notebook locally or in Google&nbsp;Colab:
+
+1. Install the dependencies listed in `requirements.txt`.
+2. Provide values for the environment variables `LITELLM_API_KEY`, `LITELLM_URL`, and `LITELLM_MODEL` (Colab users can store these as secrets).
+3. Launch Jupyter or open the notebook in Colab and execute the cells sequentially.
+
+The resulting agent showcases how lightweight tools and memory can be combined to build a security-focused deep research assistant.
+
 ## Session Schedule
 
 | Session | Title | Team | Date | Location |
