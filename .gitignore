@@ -1,0 +1,6 @@
+# add .env
+.env
+.env.local
+.env.*.local    
+# ignore ds store files
+.DS_Store
