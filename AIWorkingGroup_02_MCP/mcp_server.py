@@ -1,7 +1,6 @@
 from mcp.server.fastmcp import FastMCP
 from mcp.server.auth.settings import AuthSettings
 from pydantic import AnyHttpUrl
-from dotenv import load_dotenv
 from src.auth import SimpleTokenVerifier
 import requests, os
 
@@ -9,9 +8,6 @@ import requests, os
 # -------------------------
 # INTIALIZATION
 # -------------------------
-# Load Environment Variables
-load_dotenv()
-
 # Simple MCP server
 mcp = FastMCP(
     "Weather MCP Server",
